@@ -32,6 +32,9 @@ jobs:
       - name: Build with Maven
         run: mvn clean install -B
 
+      - name: Maven Package
+        run: mvn package
+
       - name: Run tests
         run: mvn test
 
@@ -45,7 +48,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
-        run: mvn package
         uses: docker/build-push-action@v5
         with:
           push: true

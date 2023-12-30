@@ -1,5 +1,5 @@
 FROM openjdk:latest
-WORKDIR /app
-COPY target/springboot-images-new.jar /app/springboot-images-new.jar
+ARG JAR_FILE=target/*.jar
+COPY target/springboot-images-new.jar app.jar
 EXPOSE 8080
-CMD ["java", "-jar", "/app/springboot-images-new.jar"]
+CMD ["java", "-jar", "/app.jar"]

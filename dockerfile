@@ -1,5 +1,5 @@
 FROM openjdk:latest
 ARG JAR_FILE=target/*.jar
-COPY target/springboot-images-new.jar app.jar
+ADD target/springboot-images-new.jar springboot-images-new.jar
 EXPOSE 8080
-CMD ["java", "-jar", "/app.jar"]
+CMD ["java", "-jar", "/springboot-images-new.jar"]

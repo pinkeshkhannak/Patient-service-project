@@ -44,10 +44,9 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build and push
-        uses: docker/build-push-action@v5
-        with:
-          push: true
-          tags: pinkeshkhanna56/patient-service-project-dev
+      - name: Docker build and push
+        run: |
+          docker build -t pinkeshkhanna56/patient-service-project-dev .
+          docker push pinkeshkhanna56/patient-service-project-dev
 
 

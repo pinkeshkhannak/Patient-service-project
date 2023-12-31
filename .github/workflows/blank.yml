@@ -45,6 +45,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Docker build and push
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         run: |
           docker build -t pinkeshkhanna56/patient-service-project-dev .
           docker push pinkeshkhanna56/patient-service-project-dev

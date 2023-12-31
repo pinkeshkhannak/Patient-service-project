@@ -17,15 +17,10 @@ public class Patient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank(message = "name is mandatory")
     private String name;
-    @NotBlank(message = "age is mandatory")
     private String age;
-    @NotBlank(message = "=gender is mandatory")
     private String gender;
-    @NotNull(message = "contactNumber is mandatory")
     private Long contactNumber;
-    @NotBlank(message = "reasonForVisit is mandatory")
     private String reasonForVisit;
 
     public Map<String, String> toMap() {
